@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmegaAutoImgParsing", "OmegaAutoImgParsing\OmegaAutoImgParsing.csproj", "{F27D779C-2267-41B1-A2F3-E81C02D2D726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{660AAA68-0A91-450F-9798-F547B8B7B3CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmegaParsingLib", "OmegaParsingLib\OmegaParsingLib.csproj", "{A3E7019E-CA86-4969-86B1-27F19D7FFC51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xNet", "..\PostAds\xNet\xNet.csproj", "{5D25D06E-0D35-42EF-BBA2-D5DE6E06CD04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F27D779C-2267-41B1-A2F3-E81C02D2D726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27D779C-2267-41B1-A2F3-E81C02D2D726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27D779C-2267-41B1-A2F3-E81C02D2D726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27D779C-2267-41B1-A2F3-E81C02D2D726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{660AAA68-0A91-450F-9798-F547B8B7B3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{660AAA68-0A91-450F-9798-F547B8B7B3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{660AAA68-0A91-450F-9798-F547B8B7B3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{660AAA68-0A91-450F-9798-F547B8B7B3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E7019E-CA86-4969-86B1-27F19D7FFC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E7019E-CA86-4969-86B1-27F19D7FFC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E7019E-CA86-4969-86B1-27F19D7FFC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E7019E-CA86-4969-86B1-27F19D7FFC51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D25D06E-0D35-42EF-BBA2-D5DE6E06CD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D25D06E-0D35-42EF-BBA2-D5DE6E06CD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D25D06E-0D35-42EF-BBA2-D5DE6E06CD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D25D06E-0D35-42EF-BBA2-D5DE6E06CD04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
