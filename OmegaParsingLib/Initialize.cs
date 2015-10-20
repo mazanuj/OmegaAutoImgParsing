@@ -17,9 +17,9 @@ namespace OmegaParsingLib
         {
             try
             {
-                var req = await GetRequest(userName, userPass);
-                if (req == null)
-                    throw new Exception("Not logged in");
+                //var req = await GetRequest(userName, userPass);
+                //if (req == null)
+                //    throw new Exception("Not logged in");
 
                 Informer.RaiseOnResultReceived("Successfully logged in");
 
@@ -27,17 +27,39 @@ namespace OmegaParsingLib
                 if (list.Count < 2)
                     throw new Exception("Wrong file format");
 
-                for (var i = 1; i < list.Count; i++)
+                var firstRow = list[0];
+                list.RemoveAt(0);
+
+                await list.ForEachAsync(50, async val =>
                 {
-                    var result = await DataParsing(req, list[i][0]);
+                    var req = await GetRequest(userName, userPass);
+                    if (req == null)
+                        throw new Exception("Not logged in");
+
+                    var result = await DataParsing(req, val[0]);
                     if (string.IsNullOrEmpty(result))
-                        list[i][11] = string.Empty;
+                        val[11] = string.Empty;
                     else
                     {
-                        list[i][11] = $"http://shop.omega-auto.biz/Images/img.ashx?gra_id={result}&tab_nr=255";
-                        Informer.RaiseOnResultReceived($"{list[i][0]} => {list[i][11]}");
+                        val[11] = $"http://shop.omega-auto.biz/Images/img.ashx?gra_id={result}&tab_nr=255";
+                        Informer.RaiseOnResultReceived($"{val[0]} => {val[11]}");
                     }
-                }
+                });
+
+
+                //for (var i = 1; i < list.Count; i++)
+                //{
+                //    var result = await DataParsing(req, list[i][0]);
+                //    if (string.IsNullOrEmpty(result))
+                //        list[i][11] = string.Empty;
+                //    else
+                //    {
+                //        list[i][11] = $"http://shop.omega-auto.biz/Images/img.ashx?gra_id={result}&tab_nr=255";
+                //        Informer.RaiseOnResultReceived($"{list[i][0]} => {list[i][11]}");
+                //    }
+                //}
+
+                list.Insert(0, firstRow);
                 await SaveFile(list, filePath);
             }
             catch (Exception ex)
@@ -103,7 +125,7 @@ namespace OmegaParsingLib
                     req.AddParam(@"__VIEWSTATE", __VIEWSTATE);
 
                     req.Post(url).None();
-                    req.Get("http://shop.omega-auto.biz/Home/").None();
+                    //req.Get("http://shop.omega-auto.biz/Home/").None();
 
                     return req;
                 }
